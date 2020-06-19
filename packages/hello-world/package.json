@@ -1,0 +1,23 @@
+{
+    "name": "hello-world",
+    "version": "0.0.1",
+    "description": "查找spriteFrame扩展包",
+    "author": {
+        "name": "lwg",
+        "email": "642167809@qq.com"
+    },
+    "main": "main.js",
+    "main-menu": {
+        "i18n:MAIN_MENU.package.title/openPanel": {
+            "message": "hello-world:openPanel"
+        }
+    },
+    "panel": {
+        "main": "panel/index.html",
+        "type": "simple",
+        "title": "Simple Panel",
+        "width": 400,
+        "height": 300
+    },
+    "scene-script": "scene-Ctrl.js"
+}

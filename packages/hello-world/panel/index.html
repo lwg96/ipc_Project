@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <title>Simple Panel Window</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 10px;
+    }
+
+    h1 {
+      color: #f90
+    }
+  </style>
+</head>
+
+<body>
+  <h1>A simple panel window</h1>
+
+  <button id="findPath">findPath</button>
+  <label id="tipTxt"></label>
+  <br>
+  <label id="spNum"></label>
+  <br>
+  <label id="sceneSpNum"></label>
+  <br>
+  <label id="prefabSpNum"></label>
+  <br><br>
+  <button id="moveSp">moveSp</button>
+
+
+  <script>
+    window.allUUid = [];
+
+    let spNum = document.getElementById("spNum");
+    let tipTxt = document.getElementById("tipTxt");
+    let sceneSpNum = document.getElementById("sceneSpNum");
+    let prefabSpNum = document.getElementById("prefabSpNum");
+    let createSceneBtn = document.getElementById("findPath");
+    let moveSpBtn = document.getElementById("moveSp");
+
+    createSceneBtn.addEventListener('click', () => {
+      tipTxt.innerText = "正在查找图片...";
+      Editor.Ipc.sendToMain("hello-world:find-all-spriteFrame", function (result) {
+
+        spNum.innerText = "共找到 " + result.length + " 张图片";
+        window.spUuidArr = [];
+        result.forEach(element => {
+          window.spUuidArr.push(element.uuid);
+        });
+        tipTxt.innerText = "正在查找Scene...";
+        Editor.Ipc.sendToMain("hello-world:find-all-scene");
+      });
+
+    });
+    moveSpBtn.addEventListener('click', () => {
+      Editor.log("AAA = ", JSON.stringify(window.allUuidArr));
+
+      Editor.Ipc.sendToMain("hello-world:move-All-UnuseSp",window.allUuidArr);
+
+    });
+
+    require('electron').ipcRenderer.on('hello-world:allSceneUUid', function (event, results) {
+      window.sceneUuidArr = results;
+      sceneSpNum.innerText = "场景中共找到 " + window.sceneUuidArr.length + " 张图片";
+
+      tipTxt.innerText = "正在查找Prefab...";
+      Editor.Ipc.sendToMain("hello-world:find-all-prefab");
+    });
+
+    require('electron').ipcRenderer.on('hello-world:allprefabUUid', function (event, results) {
+      window.prefabUuidArr = results;
+      prefabSpNum.innerText = "预制体中共找到 " + window.prefabUuidArr.length + " 张图片";
+
+      window.allUuidArr = [];
+
+      let len = window.spUuidArr.length;
+      for (let i = 0; i < len; i++) {
+        let uuid = window.spUuidArr[i];
+        if (window.sceneUuidArr.indexOf(uuid) == -1 && window.prefabUuidArr.indexOf(uuid) == -1) {
+          window.allUuidArr.push(uuid);
+        }
+      }
+      tipTxt.innerText = "查找完毕";
+      // Editor.Ipc.sendToMain("hello-world:find-all-prefab");
+    });
+
+    require('electron').ipcRenderer.on('hello-world:showProcess', function (event, process) {
+      tipTxt.innerText = "当前进度为:" + process;
+    });
+  </script>
+</body>
+
+</html>
