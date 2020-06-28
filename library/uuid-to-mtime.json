@@ -480,7 +480,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "bdde6626-952a-4307-a37c-88ae4079e508": {
-    "asset": 1591070477920,
+    "asset": 1593327973214,
     "meta": 1590399923622,
     "relativePath": "resources"
   },
@@ -495,8 +495,8 @@
     "relativePath": "Scene"
   },
   "d749ec5e-a9b4-465b-afa1-e011f6e1c0de": {
-    "asset": 1591091270706,
-    "meta": 1591091270711,
+    "asset": 1593325862889,
+    "meta": 1593325862944,
     "relativePath": "Scene\\MainScene.fire"
   },
   "ec941402-89ad-4c0d-ba1c-45566b44396f": {
@@ -519,29 +519,49 @@
     "meta": 1591072365178,
     "relativePath": "Scripts\\MainSceneCtrl.js"
   },
+  "bd086c58-b05b-430d-8292-c7151dfb62d4": {
+    "asset": 1593327973221,
+    "meta": 1593325584276,
+    "relativePath": "resources\\img"
+  },
   "e6484df9-1252-4c64-ba62-81ace5ca886c": {
     "asset": 1590545560235,
-    "meta": 1591093937666,
-    "relativePath": "resources\\2.png"
+    "meta": 1593328577961,
+    "relativePath": "movedAllDir\\resources\\2.png"
   },
   "f4968586-8851-4929-8e7a-54e9ab85aa00": {
     "asset": 1590545560288,
-    "meta": 1591093937668,
-    "relativePath": "resources\\3.png"
-  },
-  "471c978b-2b9b-4345-ac61-8dec52a61ba5": {
-    "asset": 1590545560347,
-    "meta": 1591093937678,
-    "relativePath": "resources\\4.png"
-  },
-  "84c93878-a052-48a6-b827-5b724b126b19": {
-    "asset": 1590545560405,
-    "meta": 1591093937679,
-    "relativePath": "resources\\5.png"
+    "meta": 1593328577964,
+    "relativePath": "movedAllDir\\resources\\3.png"
   },
   "5cf08c30-d577-44a6-923c-ce551f025c5c": {
     "asset": 1590545560458,
-    "meta": 1591093937686,
-    "relativePath": "resources\\6.png"
+    "meta": 1593328577977,
+    "relativePath": "movedAllDir\\resources\\6.png"
+  },
+  "84c93878-a052-48a6-b827-5b724b126b19": {
+    "asset": 1590545560405,
+    "meta": 1593328577979,
+    "relativePath": "movedAllDir\\resources\\5.png"
+  },
+  "79e09227-bf91-4c8e-adae-beb99f36daa8": {
+    "asset": 1590545560347,
+    "meta": 1593328577989,
+    "relativePath": "movedAllDir\\resources\\img\\4.png"
+  },
+  "32de1ff8-b4a3-4152-bff6-b82970689528": {
+    "asset": 1593328630833,
+    "meta": 1593328630834,
+    "relativePath": "movedAllDir"
+  },
+  "1f68700e-e8fc-450a-91d5-861efb67ea08": {
+    "asset": 1593328630835,
+    "meta": 1593328630836,
+    "relativePath": "movedAllDir\\resources"
+  },
+  "3f65ce8f-ee8a-4a6c-a3dd-3681b30ecb46": {
+    "asset": 1593328630854,
+    "meta": 1593328630855,
+    "relativePath": "movedAllDir\\resources\\img"
   }
 }
